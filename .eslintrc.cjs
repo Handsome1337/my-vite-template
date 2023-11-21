@@ -33,7 +33,8 @@ module.exports = {
     'import/newline-after-import': 'error',
     'import/order': ['error', {
       'newlines-between': 'never',
-      groups: ['external', 'object', 'type', 'sibling']
+      groups: ['builtin', 'external', 'internal', 'parent', 'index', 'object', 'type', 'sibling'],
+      warnOnUnassignedImports: true,
     }],
     'import/prefer-default-export': 'off',
     'import/no-anonymous-default-export': [
