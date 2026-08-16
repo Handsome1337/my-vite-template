@@ -6,5 +6,11 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["vite.config.ts"]
+  "include": [
+    "commitlint.config.ts",
+    "lint-staged.config.ts",
+    "prettier.config.ts",
+    "stylelint.config.ts",
+    "vite.config.ts"
+  ]
 }
