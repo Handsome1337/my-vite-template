@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import type { ReactElement } from 'react';
 import reactLogo from 'assets/react.svg?url';
+import type { ReactElement } from 'react';
 import './App.css';
 
 function App(): ReactElement {

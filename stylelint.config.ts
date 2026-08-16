@@ -1,0 +1,24 @@
+import type { Config } from 'stylelint';
+
+export default {
+  extends: [
+    'stylelint-config-recommended',
+    'stylelint-config-clean-order/error',
+    'stylelint-prettier/recommended'
+  ],
+  rules: {
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['tailwind']
+      }
+    ],
+    'declaration-block-no-duplicate-properties': true,
+    'rule-empty-line-before': [
+      'always',
+      {
+        except: ['after-single-line-comment', 'first-nested']
+      }
+    ]
+  }
+} satisfies Config;
