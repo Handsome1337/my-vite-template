@@ -1,5 +1,5 @@
 import { ESLint } from 'eslint';
-import type { Configuration } from 'lint-staged';
+import { defineConfig } from 'lint-staged/config';
 
 const removeIgnoredFiles = async (files: readonly string[]): Promise<string> => {
   const eslint = new ESLint();
@@ -9,7 +9,7 @@ const removeIgnoredFiles = async (files: readonly string[]): Promise<string> => 
   return filteredFiles.join(' ');
 };
 
-export default {
+export default defineConfig({
   '*.html': 'prettier --check',
   '**/*.{ts,tsx,js,jsx}': async (files) => {
     const filesToLint = await removeIgnoredFiles(files);
@@ -17,4 +17,4 @@ export default {
     return [`eslint --report-unused-disable-directives --max-warnings 0 ${filesToLint}`];
   },
   '*.{css,scss}': 'stylelint'
-} satisfies Configuration;
+});
